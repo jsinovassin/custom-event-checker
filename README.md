@@ -1,12 +1,10 @@
-oclif-hello-world
+custom-event-checker
 =================
 
-oclif example Hello World CLI
+jCustomer events checker CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
 [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
 
 <!-- toc -->
@@ -17,37 +15,37 @@ oclif example Hello World CLI
 <!-- usage -->
 ```sh-session
 $ npm install -g custom-event-checker
-$ custom-event-identifier COMMAND
+$ custom-event-checker COMMAND
 running command...
-$ custom-event-identifier (--version)
-custom-event-identifier/0.0.0 darwin-x64 node-v19.4.0
-$ custom-event-identifier --help [COMMAND]
+$ custom-event-checker (--version)
+custom-event-checker/0.1.0 darwin-x64 node-v19.4.0
+$ custom-event-checker --help [COMMAND]
 USAGE
-  $ custom-event-identifier COMMAND
+  $ custom-event-checker COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`custom-event-identifier help [COMMANDS]`](#custom-event-identifier-help-commands)
-* [`custom-event-identifier plugins`](#custom-event-identifier-plugins)
-* [`custom-event-identifier plugins:install PLUGIN...`](#custom-event-identifier-pluginsinstall-plugin)
-* [`custom-event-identifier plugins:inspect PLUGIN...`](#custom-event-identifier-pluginsinspect-plugin)
-* [`custom-event-identifier plugins:install PLUGIN...`](#custom-event-identifier-pluginsinstall-plugin-1)
-* [`custom-event-identifier plugins:link PLUGIN`](#custom-event-identifier-pluginslink-plugin)
-* [`custom-event-identifier plugins:uninstall PLUGIN...`](#custom-event-identifier-pluginsuninstall-plugin)
-* [`custom-event-identifier plugins:uninstall PLUGIN...`](#custom-event-identifier-pluginsuninstall-plugin-1)
-* [`custom-event-identifier plugins:uninstall PLUGIN...`](#custom-event-identifier-pluginsuninstall-plugin-2)
-* [`custom-event-identifier plugins update`](#custom-event-identifier-plugins-update)
-* [`custom-event-identifier validateEvents PERSON`](#custom-event-identifier-validateevents-person)
+* [`custom-event-checker help [COMMANDS]`](#custom-event-checker-help-commands)
+* [`custom-event-checker plugins`](#custom-event-checker-plugins)
+* [`custom-event-checker plugins:install PLUGIN...`](#custom-event-checker-pluginsinstall-plugin)
+* [`custom-event-checker plugins:inspect PLUGIN...`](#custom-event-checker-pluginsinspect-plugin)
+* [`custom-event-checker plugins:install PLUGIN...`](#custom-event-checker-pluginsinstall-plugin-1)
+* [`custom-event-checker plugins:link PLUGIN`](#custom-event-checker-pluginslink-plugin)
+* [`custom-event-checker plugins:uninstall PLUGIN...`](#custom-event-checker-pluginsuninstall-plugin)
+* [`custom-event-checker plugins:uninstall PLUGIN...`](#custom-event-checker-pluginsuninstall-plugin-1)
+* [`custom-event-checker plugins:uninstall PLUGIN...`](#custom-event-checker-pluginsuninstall-plugin-2)
+* [`custom-event-checker plugins update`](#custom-event-checker-plugins-update)
+* [`custom-event-checker validateEvents`](#custom-event-checker-validateevents)
 
-## `custom-event-identifier help [COMMANDS]`
+## `custom-event-checker help [COMMANDS]`
 
-Display help for custom-event-identifier.
+Display help for custom-event-checker.
 
 ```
 USAGE
-  $ custom-event-identifier help [COMMANDS] [-n]
+  $ custom-event-checker help [COMMANDS] [-n]
 
 ARGUMENTS
   COMMANDS  Command to show help for.
@@ -56,18 +54,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for custom-event-identifier.
+  Display help for custom-event-checker.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.9/src/commands/help.ts)_
 
-## `custom-event-identifier plugins`
+## `custom-event-checker plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ custom-event-identifier plugins [--core]
+  $ custom-event-checker plugins [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -76,18 +74,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ custom-event-identifier plugins
+  $ custom-event-checker plugins
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.7/src/commands/plugins/index.ts)_
 
-## `custom-event-identifier plugins:install PLUGIN...`
+## `custom-event-checker plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:install PLUGIN...
+  $ custom-event-checker plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -109,23 +107,23 @@ DESCRIPTION
 
 
 ALIASES
-  $ custom-event-identifier plugins add
+  $ custom-event-checker plugins add
 
 EXAMPLES
-  $ custom-event-identifier plugins:install myplugin 
+  $ custom-event-checker plugins:install myplugin 
 
-  $ custom-event-identifier plugins:install https://github.com/someuser/someplugin
+  $ custom-event-checker plugins:install https://github.com/someuser/someplugin
 
-  $ custom-event-identifier plugins:install someuser/someplugin
+  $ custom-event-checker plugins:install someuser/someplugin
 ```
 
-## `custom-event-identifier plugins:inspect PLUGIN...`
+## `custom-event-checker plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:inspect PLUGIN...
+  $ custom-event-checker plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
@@ -141,16 +139,16 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ custom-event-identifier plugins:inspect myplugin
+  $ custom-event-checker plugins:inspect myplugin
 ```
 
-## `custom-event-identifier plugins:install PLUGIN...`
+## `custom-event-checker plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:install PLUGIN...
+  $ custom-event-checker plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -172,23 +170,23 @@ DESCRIPTION
 
 
 ALIASES
-  $ custom-event-identifier plugins add
+  $ custom-event-checker plugins add
 
 EXAMPLES
-  $ custom-event-identifier plugins:install myplugin 
+  $ custom-event-checker plugins:install myplugin 
 
-  $ custom-event-identifier plugins:install https://github.com/someuser/someplugin
+  $ custom-event-checker plugins:install https://github.com/someuser/someplugin
 
-  $ custom-event-identifier plugins:install someuser/someplugin
+  $ custom-event-checker plugins:install someuser/someplugin
 ```
 
-## `custom-event-identifier plugins:link PLUGIN`
+## `custom-event-checker plugins:link PLUGIN`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:link PLUGIN
+  $ custom-event-checker plugins:link PLUGIN
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -206,16 +204,16 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ custom-event-identifier plugins:link myplugin
+  $ custom-event-checker plugins:link myplugin
 ```
 
-## `custom-event-identifier plugins:uninstall PLUGIN...`
+## `custom-event-checker plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:uninstall PLUGIN...
+  $ custom-event-checker plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -228,17 +226,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ custom-event-identifier plugins unlink
-  $ custom-event-identifier plugins remove
+  $ custom-event-checker plugins unlink
+  $ custom-event-checker plugins remove
 ```
 
-## `custom-event-identifier plugins:uninstall PLUGIN...`
+## `custom-event-checker plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:uninstall PLUGIN...
+  $ custom-event-checker plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -251,17 +249,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ custom-event-identifier plugins unlink
-  $ custom-event-identifier plugins remove
+  $ custom-event-checker plugins unlink
+  $ custom-event-checker plugins remove
 ```
 
-## `custom-event-identifier plugins:uninstall PLUGIN...`
+## `custom-event-checker plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ custom-event-identifier plugins:uninstall PLUGIN...
+  $ custom-event-checker plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -274,17 +272,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ custom-event-identifier plugins unlink
-  $ custom-event-identifier plugins remove
+  $ custom-event-checker plugins unlink
+  $ custom-event-checker plugins remove
 ```
 
-## `custom-event-identifier plugins update`
+## `custom-event-checker plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ custom-event-identifier plugins update [-h] [-v]
+  $ custom-event-checker plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -294,27 +292,27 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-## `custom-event-identifier validateEvents PERSON`
+## `custom-event-checker validateEvents`
 
 Build a file with the unknown properties per event
 
 ```
 USAGE
-  $ custom-event-identifier validateEvents PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
+  $ custom-event-checker validateEvents -f <value> -o <value>
 
 FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  -f, --configFile=<value>  (required) [default: ./defaultConfig.json] JSON configuration file location
+  -o, --out=<value>         (required) [default: ./data/error.json] Exported file name
 
 DESCRIPTION
   Build a file with the unknown properties per event
 
 EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  $ oex validateEvents --configFile=./path/to/your/config/config.json
+    Start the events analysis
+    Looking for configuration in file ./defaultConfig.json
+    Processed 315 events in 1546 ms
 ```
 
-_See code: [dist/commands/validateEvents/index.ts](https://github.com/jsinovassin/custom-event-identifier/blob/v0.0.0/dist/commands/validateEvents/index.ts)_
+_See code: [dist/commands/validateEvents/index.ts](https://github.com/jsinovassin/custom-event-checker/blob/v0.1.0/dist/commands/validateEvents/index.ts)_
 <!-- commandsstop -->

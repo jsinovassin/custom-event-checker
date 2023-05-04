@@ -1,7 +1,7 @@
 {
   "name": "custom-event-checker",
-  "version": "0.0.0",
-  "description": "oclif example Hello World CLI",
+  "version": "0.1.0",
+  "description": "Script that check events coming from a jCustomer to another one",
   "author": "SINOVASSIN-NAIK Jonathan",
   "bin": {
     "custom-event-identifier": "./bin/run"
@@ -49,7 +49,7 @@
     ],
     "topicSeparator": " ",
     "topics": {
-      "hello": {
+      "validateEvents": {
         "description": "Script that help to identify unknown properties of custom events"
       }
     }
@@ -66,7 +66,6 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "bugs": "https://github.com/jsinovassin/custom-event-checker/issues",
   "keywords": [
     "oclif"
   ],

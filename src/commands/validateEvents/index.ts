@@ -7,7 +7,9 @@ export default class ValidateEvents extends Command {
 
   static examples = [
     `$ oex validateEvents --configFile=./path/to/your/config/config.json
-hello friend from oclif! (./src/commands/hello/index.ts)
+  Start the events analysis
+  Looking for configuration in file ./defaultConfig.json
+  Processed 315 events in 1546 ms
 `,
   ]
 
@@ -32,7 +34,7 @@ hello friend from oclif! (./src/commands/hello/index.ts)
 
   public outFileLocation = ''
 
-  private step = 1
+  private step = 1000
 
   private numberOfProcessedEvent = 0
 
@@ -113,7 +115,7 @@ hello friend from oclif! (./src/commands/hello/index.ts)
   }
 
   mapEvent(event: any): any {
-    switch (event.source.evenType) {
+    switch (event.source?.evenType) {
     case 'login':
       return this.mapLoginEvent(event)
     case 'view':
