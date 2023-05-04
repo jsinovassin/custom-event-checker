@@ -120,7 +120,7 @@ export default class ValidateEvents extends Command {
   }
 
   mapEvent(event: any): any {
-    switch (event.source?.evenType) {
+    switch (event?.eventType) {
     case 'login':
       return this.mapLoginEvent(event)
     case 'view':
