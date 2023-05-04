@@ -4,7 +4,6 @@ custom-event-checker
 jCustomer events checker CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
 [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
 
 <!-- toc -->
@@ -308,9 +307,9 @@ DESCRIPTION
   Build a file with the unknown properties per event
 
 EXAMPLES
-  $ oex validateEvents --configFile=./path/to/your/config/config.json
+  $ custom-event-checker validateEvents --configFile=./path/to/your/config/config.json --out=./out.json
     Start the events analysis
-    Looking for configuration in file ./defaultConfig.json
+    Looking for configuration in file ./path/to/your/config/config.json
     Processed 315 events in 1546 ms
 ```
 

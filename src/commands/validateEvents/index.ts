@@ -1,4 +1,4 @@
-import {Command, Flags} from '@oclif/core'
+import {Command, Flags, ux} from '@oclif/core'
 import * as fs from 'fs-extra'
 import axios from 'axios'
 
@@ -6,9 +6,9 @@ export default class ValidateEvents extends Command {
   static description = 'Build a file with the unknown properties per event'
 
   static examples = [
-    `$ oex validateEvents --configFile=./path/to/your/config/config.json
+    `$ custom-event-checker validateEvents --configFile=./path/to/your/config/config.json --out=./out.json
   Start the events analysis
-  Looking for configuration in file ./defaultConfig.json
+  Looking for configuration in file ./path/to/your/config/config.json
   Processed 315 events in 1546 ms
 `,
   ]
@@ -42,7 +42,7 @@ export default class ValidateEvents extends Command {
 
   async run(): Promise<void> {
     const startingDate = new Date()
-    this.log('Start the events analysis')
+    ux.action.start('Start the events analysis')
     const {flags} = await this.parse(ValidateEvents)
 
     this.log('Looking for configuration in file', flags.configFile)
@@ -54,7 +54,7 @@ export default class ValidateEvents extends Command {
     await this.writeErrorFile(errors)
 
     const endDate = new Date()
-
+    ux.action.stop()
     this.log(`Processed ${this.numberOfProcessedEvent} events in ${endDate.getTime() - startingDate.getTime()} ms`)
   }
 
@@ -102,7 +102,12 @@ export default class ValidateEvents extends Command {
       limit: limit,
       offset: offset,
       condition: {
-        type: 'matchAllCondition',
+        type: 'eventPropertyCondition',
+        parameterValues: {
+          comparisonOperator: 'notIn',
+          propertyName: 'eventType',
+          propertyValues: ['sessionCreated', 'goal', 'sessionReassigned'],
+        },
       },
     }, {
       auth: {
@@ -168,7 +173,7 @@ export default class ValidateEvents extends Command {
 
   mapFormEvent(formEvent: any): any {
     if (formEvent.properties) {
-      if (formEvent.flattenedProperties) {
+      if (!formEvent.flattenedProperties) {
         formEvent.flattenedProperties = {}
       }
 
@@ -188,10 +193,9 @@ export default class ValidateEvents extends Command {
         password: target.password,
       },
     })
-    const aaa = Object.fromEntries(Object.entries<Array<{ error: string }>>(response.data).map(([key, errors]) => {
+    return Object.fromEntries(Object.entries<Array<{ error: string }>>(response.data).map(([key, errors]) => {
       return [key, new Set(errors.map(error => JSON.stringify(error)))]
     }))
-    return aaa
   }
 
   async writeErrorFile(data: any): Promise<void> {
